@@ -122,4 +122,14 @@ require("packer").startup(function()
 		'f-person/git-blame.nvim',
 		'kdheepak/lazygit.nvim',
 	}
+
+	-- Golang
+	use {
+			"ray-x/go.nvim",
+			run=":GoInstallBinaries",
+			config = function()
+				require("go").setup()
+			end,
+
+	}
 end)
