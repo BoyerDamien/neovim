@@ -100,7 +100,12 @@ require("packer").startup(function()
 	use {
 		'neovim/nvim-lspconfig',
 		'williamboman/nvim-lsp-installer',
-		"windwp/nvim-autopairs",
+		{
+			"windwp/nvim-autopairs",
+			config=function ()
+				require("plugins/autopairs")
+			end
+		},
 		"ray-x/lsp_signature.nvim",
 		"onsails/lspkind-nvim",
 		{
@@ -119,5 +124,10 @@ require("packer").startup(function()
 		config = function ()
 			require('go').setup()
 		end
+	}
+
+	-- Git
+	use {
+		'f-person/git-blame.nvim'
 	}
 end)
