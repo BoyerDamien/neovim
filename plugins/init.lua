@@ -120,6 +120,6 @@ require("packer").startup(function()
 	-- Git
 	use {
 		'f-person/git-blame.nvim',
-		'kdheepak/lazygit.nvim'
+		'kdheepak/lazygit.nvim',
 	}
 end)
