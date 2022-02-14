@@ -1,6 +1,9 @@
 local lsp_installer_servers = require('nvim-lsp-installer.servers')
 local lsp_installer = require('nvim-lsp-installer')
+
+-- Allow diagnostic signs
 require("lsp/diagnostic_signs")
+
 lsp_installer.settings({
 	ui = {
 		icons = {
