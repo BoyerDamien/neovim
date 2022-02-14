@@ -1,6 +1,6 @@
 local lsp_installer_servers = require('nvim-lsp-installer.servers')
 local lsp_installer = require('nvim-lsp-installer')
-
+require("lsp/diagnostic_signs")
 lsp_installer.settings({
 	ui = {
 		icons = {
@@ -43,3 +43,5 @@ for _, server_opt in pairs(servers) do
 		end
 	end
 end
+
+
