@@ -10,3 +10,7 @@ require("shortcuts")
 
 -- Lsp config
 require("lsp/init")
+
+
+-- Vim settings
+require("settings")
