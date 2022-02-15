@@ -1,17 +1,28 @@
-local leader = "<Space>"
+local wk = require("which-key")
 
--- Nvimtree
-vim.api.nvim_set_keymap("n", leader .. "e", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", leader .. "r", "<CMD>NvimTreeRefresh<CR>", { noremap = true, silent = true })
+wk.register({
+    t = {
+        name = "Nvim tree",
+        t = {"<CMD>NvimTreeToggle<CR>", "Toggle nvim tree"},
+        r = {"<CMD>NvimTreeRefresh<CR>", "Refresh nvim tree"},
+    },
+    f = {
+        name = "Files",
+        f = {"<CMD>Telescope find_files<CR>", "Find files in workspace"},
+        w = {"<CMD>Telescope live_grep<CR>", "Find word in files"},
+        s = {"<CMD>write<CR>", "Save file"},
+        c = {"<CMD>bd<CR>", "Close file"}
+    },
+    g = {
+        name = "Git",
+        l = {"<CMD>LazyGit<CR>", "Open LazyGit"},
+        s = {"<CMD>Telescope git_status<CR>", "Git status"},
+        b = {"<CMD>Telescope git_branches<CR>", "Git branches"}
+    }
 
+}, {prefix = "<Space>"})
 
 -- Buffer line navigation
 vim.api.nvim_set_keymap("n", "<Tab>", "<CMD>bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", "<CMD>bnext<CR>", { noremap = true, silent = true })
-
-
--- Telescope
-vim.api.nvim_set_keymap("n", leader .. "f", "<CMD>Telescope find_files<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", leader .. "w", "<CMD>Telescope live_grep<CR>", { noremap = true, silent = true })
-
 
