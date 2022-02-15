@@ -18,6 +18,11 @@ wk.register({
         l = {"<CMD>LazyGit<CR>", "Open LazyGit"},
         s = {"<CMD>Telescope git_status<CR>", "Git status"},
         b = {"<CMD>Telescope git_branches<CR>", "Git branches"}
+    },
+    p = {
+        name = "Packer",
+        s = {"<CMD>PackerSync<CR>", "Sync packages"},
+        c = {"<CMD>PackerCompile<CR>", "Compile packages"}
     }
 
 }, {prefix = "<Space>"})
