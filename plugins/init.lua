@@ -72,7 +72,13 @@ require("packer").startup(function()
   			config = function()
     				require("trouble").setup()
   			end
-		}
+		},
+        {
+            'folke/which-key.nvim',
+            config=function ()
+                require("plugins/which_key")
+            end
+        }
 	}
 
 	-- Completion
