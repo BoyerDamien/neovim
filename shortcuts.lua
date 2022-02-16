@@ -11,7 +11,7 @@ wk.register({
         f = {"<CMD>Telescope find_files<CR>", "Find files in workspace"},
         w = {"<CMD>Telescope live_grep<CR>", "Find word in files"},
         s = {"<CMD>write<CR>", "Save current file"},
-        c = {"<CMD>bd<CR>", "Close current file"}
+        c = {"<CMD>bd<CR>", "Close current file"},
     },
     g = {
         name = "Git",
