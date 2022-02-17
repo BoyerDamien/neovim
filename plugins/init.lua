@@ -67,13 +67,6 @@ require("packer").startup(function()
             end
         },
         {
-            'folke/trouble.nvim',
-            requires = "kyazdani42/nvim-web-devicons",
-            config = function()
-                require("trouble").setup()
-            end
-        },
-        {
             'folke/which-key.nvim',
             config=function ()
                 require("plugins/which_key")
@@ -132,7 +125,6 @@ require("packer").startup(function()
 
     -- Git
     use {
-        'f-person/git-blame.nvim',
         'kdheepak/lazygit.nvim',
     }
 
