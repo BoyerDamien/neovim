@@ -122,10 +122,16 @@ require("packer").startup(function()
             end,
         },
     }
-
     -- Git
     use {
         'kdheepak/lazygit.nvim',
+        {
+            'lewis6991/gitsigns.nvim',
+            requires = 'nvim-lua/plenary.nvim',
+            config = function()
+                require('gitsigns').setup()
+            end
+        }
     }
 
     -- Golang
