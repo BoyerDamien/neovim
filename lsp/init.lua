@@ -26,7 +26,7 @@ local servers = {
 	{
 		name = "sumneko_lua",
 		opt = require("lsp/lua")
-	}
+	},
 }
 
 -- Loop through the servers listed above and set them up. If a server is
