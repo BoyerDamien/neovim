@@ -12,5 +12,9 @@ require("shortcuts")
 require("lsp/init")
 
 
--- Vim settings
+-- Neovim settings
 require("settings")
+
+
+-- Personal cmd
+require("pkg/cmds")

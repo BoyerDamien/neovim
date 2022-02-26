@@ -77,7 +77,11 @@ require("packer").startup(function()
             config = function()
                 require('Comment').setup()
             end
+        },
+        use {
+            'voldikss/vim-floaterm',
         }
+
     }
 
     -- Completion
@@ -130,14 +134,11 @@ require("packer").startup(function()
     }
     -- Git
     use {
-        'kdheepak/lazygit.nvim',
-        {
             'lewis6991/gitsigns.nvim',
             requires = 'nvim-lua/plenary.nvim',
             config = function()
                 require('gitsigns').setup()
             end
-        }
     }
 
     -- Golang
