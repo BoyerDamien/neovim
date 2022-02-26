@@ -72,6 +72,12 @@ require("packer").startup(function()
                 require("plugins/which_key")
             end
         },
+        use {
+            'numToStr/Comment.nvim',
+            config = function()
+                require('Comment').setup()
+            end
+        }
     }
 
     -- Completion
