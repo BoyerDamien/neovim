@@ -30,6 +30,8 @@ vim.bo.grepprg = "rg"
 vim.bo.modeline = false
 vim.bo.swapfile = false
 vim.bo.undofile = true
+vim.o.guifont = "CaskaydiaCove Nerd Font"
+vim.g.neovide_cursor_animation_length = 0.01
 
 -----------------------------------------------------------
 -- Neovim UI
