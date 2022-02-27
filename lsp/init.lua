@@ -27,6 +27,10 @@ local servers = {
 		name = "sumneko_lua",
 		opt = require("lsp/lua")
 	},
+    {
+        name = "golangci_lint_ls",
+        opt = require("lsp/golangci")
+    }
 }
 
 -- Loop through the servers listed above and set them up. If a server is
