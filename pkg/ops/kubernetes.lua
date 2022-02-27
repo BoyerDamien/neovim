@@ -1,14 +1,14 @@
 local term = require("pkg/terminal")
 local registry = {
     name = "local-registry",
-    port = 58620,
+    port = "58620",
     address = "0.0.0.0:58620",
     dns = "local-registry:58620"
 }
 
 function CreateCluster(name)
     local registryCmd = "k3d registry create -p " .. registry.port .. " " .. registry.name
-    local clusterCmd = "k3d cluster create " .. name .. " --registry-use k3d-" .. registry.name .. ":58620"
+    local clusterCmd = "k3d cluster create " .. name .. " --registry-use k3d-" .. registry.dns
     term.RunNoAutoClose(
         "Kubernetes", registryCmd .. " && " .. clusterCmd
     )
@@ -23,7 +23,7 @@ end
 
 function DeployHelmChart(path, name)
     local helmCmd = "helm install " .. name .. " " .. path
-    local helmArgs = " --set image.repository=" .. registry.dns .. "/$(basename " .. path .. ") --set image.tag=latest"
+    local helmArgs = " --set image.repository=k3d-" .. registry.dns .. "/$(basename " .. path .. ") --set image.tag=latest"
     term.RunNoAutoClose("Kubernetes", helmCmd .. " " .. helmArgs)
 end
 
