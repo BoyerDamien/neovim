@@ -1,6 +1,4 @@
 return {
-	on_attach = require("lsp/on_attach"),
-	capabilities = require("lsp/capabilities"),
 	cmd = { "gopls", "serve" },
 	settings = {
 		gopls = {

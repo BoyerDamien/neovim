@@ -21,11 +21,25 @@ function DeleteCluster(name)
 end
 
 
-function DeployHelmChart(path, name)
+function BuildHelmChart(path, name)
     local helmCmd = "helm install " .. name .. " " .. path
     local helmArgs = " --set image.repository=k3d-" .. registry.dns .. "/$(basename " .. path .. ") --set image.tag=latest"
-    term.RunNoAutoClose("Kubernetes", helmCmd .. " " .. helmArgs)
+    return helmCmd .. " " .. helmArgs
 end
+
+function DeployHelmChart(path, name)
+    term.RunNoAutoClose("Kubernetes", BuildHelmChart(path, name))
+end
+
+
+function DeployAllHelmCharts(baseDir)
+    local name = "$(basename $path)"
+    local path = "$path/k8s/" .. name
+    local bashCmd = "for path in $(ls -d " .. baseDir.."/*/); do " .. BuildHelmChart(path, name) .. "; done"
+    term.RunNoAutoClose("Kubernetes", bashCmd)
+end
+
+
 
 function Inpsect()
     term.Run("Kubernetes", "k9s")
@@ -36,6 +50,7 @@ return {
     CreateCluster = CreateCluster,
     DeleteCluster = DeleteCluster,
     DeployHelmChart = DeployHelmChart,
+    DeployAllHelmCharts = DeployAllHelmCharts,
     Inpsect = Inpsect,
     Registry = registry
 }

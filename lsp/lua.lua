@@ -1,7 +1,5 @@
 return {
 	cmd = { "lua-language-server" },
-	on_attach = require("lsp/on_attach"),
-	capabilities = require("lsp/capabilities"),
 	settings = {
 		Lua = {
 			completion = {

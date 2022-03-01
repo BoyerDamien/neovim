@@ -7,6 +7,7 @@ function BuildDockerCommand(directory)
     return "cd " .. directory .. " && make && docker build -t " .. name ..  " . && docker push " .. name
 end
 
+
 function DeployDockerImage(directory)
     term.RunNoAutoClose(
         "Docker", BuildDockerCommand(directory)

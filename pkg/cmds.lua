@@ -18,5 +18,6 @@ vim.api.nvim_command("command! -nargs=1 -complete=dir DeployAllDockerImages lua 
 ---------------------------------------------------------------------------------
 vim.api.nvim_command("command! -nargs=* -complete=dir CreateCluster lua require('pkg/ops/kubernetes').CreateCluster(<f-args>)")
 vim.api.nvim_command("command! -nargs=* -complete=dir DeployHelmChart lua require('pkg/ops/kubernetes').DeployHelmChart(<f-args>)")
+vim.api.nvim_command("command! -nargs=1 -complete=dir DeployAllHelmCharts lua require('pkg/ops/kubernetes').DeployAllHelmCharts(<f-args>)")
 vim.api.nvim_command("command! -nargs=1 DeleteCluster lua require('pkg/ops/kubernetes').DeleteCluster(<f-args>)")
 vim.api.nvim_command("command! InpsectCluster lua require('pkg/ops/kubernetes').Inpsect()")
