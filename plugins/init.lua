@@ -13,7 +13,21 @@ require("packer").startup(function()
             },
             config = function()
                 require("plugins/nvim_tree")
-                require("nvim-tree").setup({})
+                require("nvim-tree").setup({
+                    actions = {
+                        open_file = {
+                        quit_on_open = true,
+                        resize_window = false,
+                        window_picker = {
+                            enable = true,
+                            chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                            exclude = {
+                                filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", },
+                                buftype  = { "nofile", "terminal", "help", },
+                            }
+                        }
+                    }
+                }})
             end,
         },
         {
@@ -134,11 +148,11 @@ require("packer").startup(function()
     }
     -- Git
     use {
-            'lewis6991/gitsigns.nvim',
-            requires = 'nvim-lua/plenary.nvim',
-            config = function()
-                require('gitsigns').setup()
-            end
+        'lewis6991/gitsigns.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
     }
 
     -- Golang

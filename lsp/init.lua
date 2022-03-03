@@ -34,6 +34,10 @@ local servers = {
     {
         name = "yamlls",
         opt = require("lsp/yaml")
+    },
+    {
+        name = "rust_analyzer",
+        opt = {}
     }
 }
 
