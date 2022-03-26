@@ -37,7 +37,7 @@ local servers = {
     },
     {
         name = "rust_analyzer",
-        opt = {}
+        opt = require("lsp.rust")
     }
 }
 
