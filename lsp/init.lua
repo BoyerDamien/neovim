@@ -47,6 +47,10 @@ local servers = {
         name = "tsserver",
         opt = {}
     },
+    {
+        name = "spectral" ,
+        opt = {}
+    }
 }
 
 -- Loop through the servers listed above and set them up. If a server is

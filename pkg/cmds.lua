@@ -21,3 +21,9 @@ vim.api.nvim_command("command! -nargs=* -complete=dir DeployHelmChart lua requir
 vim.api.nvim_command("command! -nargs=1 -complete=dir DeployAllHelmCharts lua require('pkg/ops/kubernetes').DeployAllHelmCharts(<f-args>)")
 vim.api.nvim_command("command! -nargs=1 DeleteCluster lua require('pkg/ops/kubernetes').DeleteCluster(<f-args>)")
 vim.api.nvim_command("command! InpsectCluster lua require('pkg/ops/kubernetes').Inpsect()")
+
+---------------------------------------------------------------------------------
+--                              Swagger commands
+---------------------------------------------------------------------------------
+vim.api.nvim_command("command! -nargs=1 -complete=file SwaggerPreview lua require('pkg.Swagger').Preview(<f-args>)")
+vim.api.nvim_command("command! StopPreview lua require('pkg.Swagger').Stop()")
