@@ -25,5 +25,7 @@ vim.api.nvim_command("command! InpsectCluster lua require('pkg/ops/kubernetes').
 ---------------------------------------------------------------------------------
 --                              Swagger commands
 ---------------------------------------------------------------------------------
-vim.api.nvim_command("command! -nargs=1 -complete=file SwaggerPreview lua require('pkg.Swagger').Preview(<f-args>)")
-vim.api.nvim_command("command! StopPreview lua require('pkg.Swagger').Stop()")
+vim.api.nvim_command("command! SwaggerPreview lua require('pkg.Swagger').Preview(vim.api.nvim_buf_get_name(0))")
+-- vim.api.nvim_command("command! -nargs=1 -complete=file SwaggerPreview lua require('pkg.Swagger').Preview(<f-args>)")
+vim.api.nvim_command("command! SwaggerPreviewStop lua require('pkg.Swagger').Stop()")
+vim.api.nvim_command("command! SwaggerPreviewShow lua require('pkg.Swagger').Show()")

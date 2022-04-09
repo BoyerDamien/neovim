@@ -10,7 +10,12 @@ function StopPreview()
     terminal.Run("StopSwaggerPreview", "docker stop " ..containerName)
 end
 
+function Show()
+    terminal.Run("SwaggerPreviewShow", "open http://localhost/swagger")
+end
+
 return {
     Preview = Preview,
-    Stop = StopPreview
+    Stop = StopPreview,
+    Show = Show
 }
