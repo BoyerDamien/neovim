@@ -8,7 +8,7 @@ return {
 			},
 			linksInHover = true,
 			staticcheck = true,
-			usePlaceholders = true,
+			usePlaceholders = false,
 			codelenses = {
 				generate = true,
 				gc_details = true,
@@ -16,7 +16,6 @@ return {
 				tidy = true,
 				upgrade_depdendency = true,
 				vendor = true,
-
 			},
 
 		},

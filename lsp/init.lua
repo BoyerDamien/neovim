@@ -38,7 +38,15 @@ local servers = {
     {
         name = "rust_analyzer",
         opt = require("lsp.rust")
-    }
+    },
+    {
+        name = "clangd",
+        opt = {}
+    },
+    {
+        name = "tsserver",
+        opt = {}
+    },
 }
 
 -- Loop through the servers listed above and set them up. If a server is
