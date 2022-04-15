@@ -2,6 +2,7 @@ return {
 	cmd = { "gopls", "serve" },
 	settings = {
 		gopls = {
+            experimentalPostfixCompletions = true,
 			analyses = {
 				unusedparams = true,
 				unreachable = true,

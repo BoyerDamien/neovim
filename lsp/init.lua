@@ -50,6 +50,10 @@ local servers = {
     {
         name = "spectral" ,
         opt = {}
+    },
+    {
+        name = "jsonls",
+        opt = {}
     }
 }
 
