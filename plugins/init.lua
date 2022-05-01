@@ -18,6 +18,7 @@ require("packer").startup(function()
                         open_file = {
                         quit_on_open = true,
                         resize_window = false,
+                        -- nvim_tree_indent_markers = true,
                         window_picker = {
                             enable = true,
                             chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",

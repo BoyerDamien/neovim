@@ -25,14 +25,14 @@ cmp.setup {
         end,
     },
     mapping = {
-        ['<Tab>'] = function(fallback)
+        ['<Down>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             else
                 fallback()
             end
         end,
-        ['<S-Tab>'] = function(fallback)
+        ['<Up>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             else
