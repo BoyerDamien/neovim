@@ -16,24 +16,24 @@ require("packer").startup(function()
                 require("nvim-tree").setup({
                     actions = {
                         open_file = {
-                        quit_on_open = true,
-                        resize_window = false,
-                        -- nvim_tree_indent_markers = true,
-                        window_picker = {
-                            enable = true,
-                            chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-                            exclude = {
-                                filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", },
-                                buftype  = { "nofile", "terminal", "help", },
+                            quit_on_open = true,
+                            resize_window = false,
+                            -- nvim_tree_indent_markers = true,
+                            window_picker = {
+                                enable = true,
+                                chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                                exclude = {
+                                    filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", },
+                                    buftype  = { "nofile", "terminal", "help", },
+                                }
                             }
                         }
-                    }
-                }})
+                    } })
             end,
         },
         {
             "nvim-telescope/telescope.nvim",
-            requires = {  "nvim-lua/popup.nvim" ,  "nvim-lua/plenary.nvim"  },
+            requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
         },
     }
 
@@ -48,7 +48,7 @@ require("packer").startup(function()
         {
             'folke/tokyonight.nvim',
             config = function()
-                vim.cmd[[colorscheme tokyonight]]
+                vim.cmd [[colorscheme tokyonight]]
             end,
         },
         {
@@ -57,7 +57,7 @@ require("packer").startup(function()
             config = function()
                 require('lualine').setup {
                     options = {
-                        theme = 'tokyonight'
+                        theme = 'tokyonight',
                     }
                 }
             end,
@@ -83,7 +83,7 @@ require("packer").startup(function()
         },
         {
             'folke/which-key.nvim',
-            config=function ()
+            config = function()
                 require("plugins/which_key")
             end
         },
@@ -95,8 +95,14 @@ require("packer").startup(function()
         },
         use {
             'voldikss/vim-floaterm',
+        },
+        use {
+            "folke/trouble.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+            config = function()
+                require("trouble").setup {}
+            end
         }
-
     }
 
     -- Completion
@@ -133,7 +139,7 @@ require("packer").startup(function()
         'williamboman/nvim-lsp-installer',
         {
             "windwp/nvim-autopairs",
-            config=function ()
+            config = function()
                 require("plugins/autopairs")
             end
         },
@@ -159,7 +165,7 @@ require("packer").startup(function()
     -- Golang
     use {
         "ray-x/go.nvim",
-        run=":GoInstallBinaries",
+        run = ":GoInstallBinaries",
         config = function()
             require("go").setup()
         end,
