@@ -18,7 +18,6 @@ require("packer").startup(function()
                         open_file = {
                             quit_on_open = true,
                             resize_window = false,
-                            -- nvim_tree_indent_markers = true,
                             window_picker = {
                                 enable = true,
                                 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
@@ -46,10 +45,20 @@ require("packer").startup(function()
             end,
         },
         {
-            'folke/tokyonight.nvim',
+            'navarasu/onedark.nvim',
             config = function()
-                vim.cmd [[colorscheme tokyonight]]
-            end,
+                require('onedark').setup({
+                    style = "cool",
+                    code_style = {
+                        comments = 'italic,underline',
+                        keywords = 'none',
+                        functions = 'bold',
+                        strings = 'none',
+                        variables = 'none'
+                    },
+                })
+                require('onedark').load()
+            end
         },
         {
             'nvim-lualine/lualine.nvim',
@@ -57,8 +66,18 @@ require("packer").startup(function()
             config = function()
                 require('lualine').setup {
                     options = {
-                        theme = 'tokyonight',
-                    }
+                        theme = 'onedark',
+                        section_separators = { left = '', right = '' },
+                        component_separators = { left = '', right = '' }
+                    },
+                    sections = {
+                        lualine_a = { 'mode' },
+                        lualine_b = { 'branch', 'diff', 'diagnostics' },
+                        lualine_c = { 'windows' },
+                        lualine_x = { 'fileformat', 'filetype' },
+                        lualine_y = { 'progress' },
+                        lualine_z = { 'location' }
+                    },
                 }
             end,
         },
