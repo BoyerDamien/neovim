@@ -16,9 +16,11 @@ require("packer").startup(function()
     -- UI
     use {
         require("plugins.one_dark"),
-        require("plugins.lualine"),
         require("plugins.trouble"),
         require("plugins.indentline"),
+        require("plugins.debug"),
+        require("plugins.lualine"),
+
         {
             'glepnir/dashboard-nvim',
             config = function()
@@ -114,5 +116,6 @@ require("packer").startup(function()
             require("go").setup()
         end,
     }
+
 
 end)
