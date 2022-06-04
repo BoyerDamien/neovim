@@ -17,8 +17,8 @@ return {
 				tidy = true,
 				upgrade_depdendency = true,
 				vendor = true,
+				test = true
 			},
-
 		},
 	},
 }

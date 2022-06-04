@@ -69,15 +69,7 @@ require("packer").startup(function()
                         theme = 'onedark',
                         section_separators = { left = '', right = '' },
                         component_separators = { left = '', right = '' }
-                    },
-                    sections = {
-                        lualine_a = { 'mode' },
-                        lualine_b = { 'branch', 'diff', 'diagnostics' },
-                        lualine_c = { 'windows' },
-                        lualine_x = { 'fileformat', 'filetype' },
-                        lualine_y = { 'progress' },
-                        lualine_z = { 'location' }
-                    },
+                    }
                 }
             end,
         },
@@ -188,11 +180,10 @@ require("packer").startup(function()
 
     -- Golang
     use {
-        "ray-x/go.nvim",
-        run = ":GoInstallBinaries",
-        config = function()
-            require("go").setup()
-        end,
-
+            "ray-x/go.nvim",
+            run = ":GoInstallBinaries",
+            config = function()
+                require("go").setup()
+            end,
     }
 end)
