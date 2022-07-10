@@ -115,10 +115,10 @@ function DapAdapter()
         end)
         -- Wait for delve to start
         vim.defer_fn(
-        function()
-            callback({ type = "server", host = "127.0.0.1", port = port })
-        end,
-        100)
+            function()
+                callback({ type = "server", host = "127.0.0.1", port = port })
+            end,
+            100)
     end
     -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
     dap.configurations.go = {

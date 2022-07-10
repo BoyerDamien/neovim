@@ -15,6 +15,5 @@ require("lsp/init")
 -- Neovim settings
 require("settings")
 
-
 -- Personal cmd
 require("pkg/cmds")

@@ -34,7 +34,8 @@ return function(client, bufnr)
 	require("lsp_signature").on_attach()
 
 	-- Autoformat
-	vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+	vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+	-- vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 
 	-- Set autocommands conditional on server_capabilities
 	if client.server_capabilities.document_highlight then
