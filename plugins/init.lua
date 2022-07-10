@@ -1,26 +1,80 @@
 -- Plugins manager
-require("packer").startup(function()
+local packer = require("packer")
+local use = packer.use
+
+packer.startup(function()
 
     -- Packer package manager
     use("wbthomason/packer.nvim")
 
-    -- File explorer
+    -- Lspconfig
     use {
+        'neovim/nvim-lspconfig',
+        {
+            'williamboman/nvim-lsp-installer',
+            config = function()
+                require('nvim-lsp-installer').setup({
+                    automatic_installation = true,
+                })
+            end
+        },
+        {
+            "windwp/nvim-autopairs",
+            config = function()
+                require("plugins/autopairs")
+            end
+        },
+        {
+            "ray-x/lsp_signature.nvim",
+            config = function()
+                require('lsp_signature').setup({
+                    bind = true,
+                    handler_opts = {
+                        border = "rounded"
+                    }
+                })
+            end
+        },
+        "onsails/lspkind-nvim",
+        {
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate",
+            config = function()
+                require('plugins/treesitter')
+            end,
+        },
+        {
+            'hrsh7th/nvim-cmp',
+            requires = {
+                'hrsh7th/cmp-buffer',
+                'hrsh7th/cmp-path',
+                'hrsh7th/cmp-nvim-lua',
+                'hrsh7th/cmp-vsnip',
+                'hrsh7th/vim-vsnip',
+                'hrsh7th/cmp-cmdline',
+                'hrsh7th/vim-vsnip-integ',
+                {
+                    "hrsh7th/cmp-nvim-lsp",
+                    config = function()
+                        require("plugins/nvim-cmp")
+                    end,
+                }
+            },
+        },
+    }
+
+
+    --  UI
+    use {
+        require("plugins.one_dark"),
         require("plugins.nvim_tree"),
+        require("plugins.indentline"),
+        require("plugins.lualine"),
+        require("plugins.trouble"),
         {
             "nvim-telescope/telescope.nvim",
             requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
         },
-    }
-
-    -- UI
-    use {
-        require("plugins.one_dark"),
-        require("plugins.trouble"),
-        require("plugins.indentline"),
-        require("plugins.debug"),
-        require("plugins.lualine"),
-
         {
             'glepnir/dashboard-nvim',
             config = function()
@@ -40,82 +94,21 @@ require("packer").startup(function()
                 require("plugins/which_key")
             end
         },
-        use {
+        {
             'numToStr/Comment.nvim',
             config = function()
                 require('Comment').setup()
             end
         },
-        use {
-            'voldikss/vim-floaterm',
-        },
-    }
-
-    -- Completion
-    use {
+        'voldikss/vim-floaterm',
         {
-            'hrsh7th/nvim-cmp',
-            requires = {
-                'hrsh7th/cmp-buffer',
-                'hrsh7th/cmp-path',
-                'hrsh7th/cmp-nvim-lua',
-                'hrsh7th/cmp-vsnip',
-                'hrsh7th/vim-vsnip',
-                'hrsh7th/cmp-cmdline',
-                'hrsh7th/vim-vsnip-integ',
-                {
-                    "hrsh7th/cmp-nvim-lsp",
-                    config = function()
-                        require("plugins/nvim-cmp")
-                    end,
-                }
-            },
-        },
-        {
-            "tzachar/cmp-tabnine",
-            run = "./install.sh",
-            requires = "hrsh7th/nvim-cmp"
-        },
-
-    }
-
-    -- Lspconfig
-    use {
-        'neovim/nvim-lspconfig',
-        'williamboman/nvim-lsp-installer',
-        {
-            "windwp/nvim-autopairs",
+            'lewis6991/gitsigns.nvim',
+            requires = 'nvim-lua/plenary.nvim',
             config = function()
-                require("plugins/autopairs")
+                require('gitsigns').setup()
             end
-        },
-        "ray-x/lsp_signature.nvim",
-        "onsails/lspkind-nvim",
-        {
-            "nvim-treesitter/nvim-treesitter",
-            run = ":TSUpdate",
-            config = function()
-                require('plugins/treesitter')
-            end,
-        },
+        }
     }
-    -- Git
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
-
-    -- Golang
-    use {
-        "ray-x/go.nvim",
-        run = ":GoInstallBinaries",
-        config = function()
-            require("go").setup()
-        end,
-    }
-
-
 end)
+
+

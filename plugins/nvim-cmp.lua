@@ -6,7 +6,6 @@ local source_mapping = {
     buffer = "[Buffer]",
     nvim_lsp = "[LSP]",
     nvim_lua = "[Lua]",
-    cmp_tabnine = "[Tabnine]",
     path = "[Path]",
 }
 
@@ -57,6 +56,7 @@ cmp.setup {
         end
     },
 }
+
 cmp.setup.cmdline(':', {
     sources = {
         { name = 'cmdline' }
