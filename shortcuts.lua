@@ -32,3 +32,10 @@ wk.register({
 -- Buffer line navigation
 vim.api.nvim_set_keymap("n", "<Tab>", "<CMD>bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", "<CMD>bnext<CR>", { noremap = true, silent = true })
+
+-- Split pane navigation
+
+vim.api.nvim_set_keymap("n", "<C-right>", "<CMD>wincmd l<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-left>", "<CMD>wincmd h<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-up>", "<CMD>wincmd k<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-down>", "<CMD>wincmd j<CR>", { noremap = true, silent = true })
