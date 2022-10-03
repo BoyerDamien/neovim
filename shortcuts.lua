@@ -17,8 +17,9 @@ wk.register({
     g = {
         name = "Git",
         l = { "<CMD>LazyGit<CR>", "Open LazyGit" },
-        s = { "<CMD>Telescope git_status<CR>", "Git status" },
-        b = { "<CMD>Telescope git_branches<CR>", "Git branches" },
+        s = { "<CMD>Telescope git_status<CR>", "Show git status" },
+        b = { "<CMD>Telescope git_branches<CR>", "Show git branches" },
+        c = { "<CMD>Telescope git_commits<CR>", "Show git commits" },
         d = { "<CMD>Gitsigns diffthis<CR>", "Git diff" }
     },
     p = {
