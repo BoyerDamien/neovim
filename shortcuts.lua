@@ -5,6 +5,7 @@ wk.register({
         name = "Nvim tree",
         t = { "<CMD>NvimTreeToggle<CR>", "Toggle nvim tree" },
         r = { "<CMD>NvimTreeRefresh<CR>", "Refresh nvim tree" },
+        e = { "<CMD>NvimTreeFocus<CR>", "Focus nvim tree" }
     },
     f = {
         name = "Files",
