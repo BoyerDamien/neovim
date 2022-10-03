@@ -109,4 +109,15 @@ packer.startup(function()
             end
         }
     }
+
+    -- Golang
+    use {
+        {
+            'ray-x/go.nvim',
+            config = function()
+                require("go").setup()
+            end
+        },
+        'ray-x/guihua.lua'
+    }
 end)
