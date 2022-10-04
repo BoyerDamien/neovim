@@ -30,15 +30,6 @@ vim.bo.grepprg = "rg"
 vim.bo.modeline = false
 vim.bo.swapfile = false
 vim.bo.undofile = true
-vim.o.guifont = "CaskaydiaCove Nerd Font"
-
------------------------------------------------------------
--- Neovide config
------------------------------------------------------------
-vim.g.neovide_cursor_animation_length = 0.013
-vim.g.neovide_cursor_trail_length = 0.2
-vim.g.neovide_cursor_antialiasing = true
-vim.g.python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.10/bin/python3'
 
 -----------------------------------------------------------
 -- Neovim UI
