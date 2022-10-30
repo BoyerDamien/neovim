@@ -9,7 +9,7 @@ require("plugins/init")
 require("shortcuts")
 
 -- Lsp config
-require("lsp/init")
+-- require("lsp/init")
 
 
 -- Neovim settings
@@ -17,3 +17,6 @@ require("settings")
 
 -- Personal cmd
 require("pkg/cmds")
+
+-- Allow diagnostic signs
+require("lspconfig.diagnostic_signs")
