@@ -12,7 +12,7 @@ local lsp_servers = {
 	jsonls = {},
 	marksman = {},
 	pyright = {},
-	sqlls = {},
+	sqls = require("lspconfig.sql"),
 	tailwindcss = {},
 	tsserver = {},
 }
