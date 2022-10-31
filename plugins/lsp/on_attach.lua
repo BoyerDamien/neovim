@@ -39,7 +39,7 @@ return function(client, bufnr)
     require("lsp_signature").on_attach()
 
     -- Autoformat
-    -- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+    vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format({ bufnr = bufnr })]])
     -- vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 
     -- Set autocommands conditional on server_capabilities
