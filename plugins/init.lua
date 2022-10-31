@@ -1,47 +1,15 @@
 -- Plugins manager
 
 require("packer").startup(function(use)
-
     -- Packer package manager
     use("wbthomason/packer.nvim")
 
     -- Lspconfig
-    --
     require("plugins.lsp.init").setup(use)
-    use {
-        -- 'neovim/nvim-lspconfig',
-        -- {
-        --     'williamboman/nvim-lsp-installer',
-        --     config = function()
-        --         require('nvim-lsp-installer').setup({
-        --             automatic_installation = true,
-        --         })
-        --     end
-        -- },
-        {
-            "ray-x/lsp_signature.nvim",
-            config = function()
-                require('lsp_signature').setup({
-                    bind = true,
-                    handler_opts = {
-                        border = "rounded"
-                    }
-                })
-            end
-        },
-        {
-            "nvim-treesitter/nvim-treesitter",
-            run = ":TSUpdate",
-            config = function()
-                require('plugins/treesitter')
-            end,
-        },
-
-        require("plugins.autocompletion.init").setup(use)
-    }
+    require("plugins.autocompletion.init").setup(use)
 
     --  UI
-    use {
+    use({
         require("plugins.theme").setup("onedarkWarm"),
         require("plugins.feline"),
         require("plugins.nvim_tree"),
@@ -51,48 +19,48 @@ require("packer").startup(function(use)
             requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
         },
         {
-            'glepnir/dashboard-nvim',
+            "glepnir/dashboard-nvim",
             config = function()
-                vim.g.dashboard_default_executive = 'telescope'
+                vim.g.dashboard_default_executive = "telescope"
             end,
         },
         {
-            'akinsho/bufferline.nvim',
-            requires = 'kyazdani42/nvim-web-devicons',
+            "akinsho/bufferline.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
             config = function()
-                require('plugins/bufferline')
+                require("plugins/bufferline")
             end,
         },
         {
-            'folke/which-key.nvim',
+            "folke/which-key.nvim",
             config = function()
                 require("plugins/which_key")
-            end
+            end,
         },
         {
-            'numToStr/Comment.nvim',
+            "numToStr/Comment.nvim",
             config = function()
-                require('Comment').setup()
-            end
+                require("Comment").setup()
+            end,
         },
-        'voldikss/vim-floaterm',
+        "voldikss/vim-floaterm",
         {
-            'lewis6991/gitsigns.nvim',
-            requires = 'nvim-lua/plenary.nvim',
+            "lewis6991/gitsigns.nvim",
+            requires = "nvim-lua/plenary.nvim",
             config = function()
-                require('gitsigns').setup()
-            end
-        }
-    }
+                require("gitsigns").setup()
+            end,
+        },
+    })
 
     -- Golang
-    use {
+    use({
         {
-            'ray-x/go.nvim',
+            "ray-x/go.nvim",
             config = function()
                 require("go").setup()
-            end
+            end,
         },
-        'ray-x/guihua.lua'
-    }
+        "ray-x/guihua.lua",
+    })
 end)
