@@ -1,6 +1,7 @@
 -- Plugins manager
+local packer = require("packer")
 
-require("packer").startup(function(use)
+packer.startup(function(use)
     -- Packer package manager
     use("wbthomason/packer.nvim")
 

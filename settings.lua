@@ -14,6 +14,8 @@ vim.o.scrolloff = 4
 vim.o.shortmess = "aoOtTIc"
 vim.o.sidescrolloff = 4
 vim.o.termguicolors = true
+vim.o.background = "dark"
+vim.o.signcolumn = "yes"
 vim.o.updatetime = 300
 vim.o.timeoutlen = 100
 vim.o.wildignorecase = true
@@ -36,8 +38,8 @@ vim.bo.undofile = true
 -----------------------------------------------------------
 vim.opt.number = true -- show line number
 vim.opt.showmatch = true -- highlight matching parenthesis
-vim.opt.foldmethod = 'marker' -- enable folding (default 'foldmarker')
-vim.opt.colorcolumn = '80' -- line lenght marker at 80 columns
+vim.opt.foldmethod = "marker" -- enable folding (default 'foldmarker')
+vim.opt.colorcolumn = "80" -- line lenght marker at 80 columns
 vim.opt.splitright = true -- vertical split to the right
 vim.opt.splitbelow = true -- orizontal split to the bottom
 vim.opt.ignorecase = true -- ignore case letters when search
@@ -60,3 +62,4 @@ vim.opt.shiftwidth = 4 -- shift 4 spaces when tab
 vim.opt.tabstop = 4 -- 1 tab == 4 spaces
 vim.opt.smartindent = true -- autoindent new lines
 vim.opt.smarttab = true
+vim.opt.backspace = "indent,eol,start"
