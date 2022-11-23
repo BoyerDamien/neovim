@@ -7,7 +7,7 @@ packer.startup(function(use)
 
     -- Lspconfig
     require("plugins.lsp.init").setup(use)
-    require("plugins.autocompletion.init").setup(use)
+    -- require("plugins.autocompletion.init").setup(use)
 
     --  UI
     use({
