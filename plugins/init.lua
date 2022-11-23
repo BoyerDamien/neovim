@@ -1,6 +1,15 @@
 -- Plugins manager
 local packer = require("packer")
 
+-- Open packer in a floating window
+packer.init({
+    display = {
+        open_fn = function()
+            return require("packer.util").float({ border = "rounded" })
+        end,
+    },
+})
+
 packer.startup(function(use)
     -- Packer package manager
     use("wbthomason/packer.nvim")

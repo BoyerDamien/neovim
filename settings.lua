@@ -31,7 +31,6 @@ vim.bo.copyindent = true
 vim.bo.grepprg = "rg"
 vim.bo.modeline = false
 vim.bo.swapfile = false
-vim.bo.undofile = true
 
 -----------------------------------------------------------
 -- Neovim UI
@@ -45,7 +44,7 @@ vim.opt.splitbelow = true -- orizontal split to the bottom
 vim.opt.ignorecase = true -- ignore case letters when search
 vim.opt.smartcase = true -- ignore lowercase for the whole pattern
 vim.opt.linebreak = true -- wrap on word boundary
-
+vim.opt.undofile = true
 -----------------------------------------------------------
 -- Memory, CPU
 -----------------------------------------------------------
@@ -62,4 +61,3 @@ vim.opt.shiftwidth = 4 -- shift 4 spaces when tab
 vim.opt.tabstop = 4 -- 1 tab == 4 spaces
 vim.opt.smartindent = true -- autoindent new lines
 vim.opt.smarttab = true
-vim.opt.backspace = "indent,eol,start"

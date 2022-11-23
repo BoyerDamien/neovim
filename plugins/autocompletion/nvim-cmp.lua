@@ -1,5 +1,5 @@
 -- Setup nvim-cmp.
-local lspkind = require('lspkind')
+local lspkind = require("lspkind")
 local cmp = require("cmp")
 
 local source_mapping = {
@@ -9,13 +9,12 @@ local source_mapping = {
     path = "[Path]",
 }
 
-
-cmp.setup {
+cmp.setup({
     sources = {
-        { name = 'nvim_lsp' },
-        { name = 'vsnip' },
-        { name = 'buffer' },
-        { name = 'path' },
+        { name = "nvim_lsp" },
+        { name = "vsnip" },
+        { name = "buffer" },
+        { name = "path" },
     },
     snippet = {
         expand = function(args)
@@ -24,27 +23,28 @@ cmp.setup {
     },
     window = {
         completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered()
+        documentation = cmp.config.window.bordered(),
     },
     mapping = {
-        ['<Down>'] = function(fallback)
+        ["<Down>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             else
                 fallback()
             end
         end,
-        ['<Up>'] = function(fallback)
+        ["<Up>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             else
                 fallback()
             end
         end,
-
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ['S-Down'] = cmp.mapping.scroll_docs(-4),
-        ['S-Up'] = cmp.mapping.scroll_docs(4)
+        -- ["<Tab>"] = cmp.mapping.complete(),
+        -- ["<S-Tab>"] = cmp.mapping.abort(),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["S-Down"] = cmp.mapping.scroll_docs(-4),
+        ["S-Up"] = cmp.mapping.scroll_docs(4),
     },
     formatting = {
         format = function(entry, vim_item)
@@ -52,24 +52,24 @@ cmp.setup {
             local menu = source_mapping[entry.source.name]
             vim_item.menu = menu
             return vim_item
-        end
+        end,
     },
-}
+})
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
+cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = 'buffer' }
-    }
+        { name = "buffer" },
+    },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-        { name = 'path' }
+        { name = "path" },
     }, {
-        { name = 'cmdline' }
-    })
+        { name = "cmdline" },
+    }),
 })
