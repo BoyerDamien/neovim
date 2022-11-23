@@ -2,7 +2,6 @@
 package.path = package.path .. ";" .. os.getenv("HOME") .. "/.config/nvim/?.lua"
 
 -- Relaod init.lua file on save
-
 vim.cmd([[
     augroup packer_user_config
         autocmd!
