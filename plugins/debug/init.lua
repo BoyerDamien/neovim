@@ -102,6 +102,8 @@ function m.setup()
     })
 
     require("plugins.debug.go").setup(dap)
+
+    require("nvim-dap-virtual-text").setup()
 end
 
 return m

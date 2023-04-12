@@ -39,7 +39,8 @@ packer.startup(function(use)
         },
         {
             "akinsho/bufferline.nvim",
-            requires = "kyazdani42/nvim-web-devicons",
+            tag = "v3.*",
+            requires = "nvim-tree/nvim-web-devicons",
             config = function()
                 require("plugins/bufferline")
             end,
@@ -72,7 +73,9 @@ packer.startup(function(use)
         config = function()
             require("go").setup()
         end,
-        "ray-x/guihua.lua",
+        requires = {
+            "ray-x/guihua.lua",
+        },
     })
 
     -- Testing
@@ -112,7 +115,7 @@ packer.startup(function(use)
     -- Debug
     use({
         "rcarriga/nvim-dap-ui",
-        requires = { "mfussenegger/nvim-dap", "folke/neodev.nvim" },
+        requires = { "mfussenegger/nvim-dap", "folke/neodev.nvim", "theHamsta/nvim-dap-virtual-text" },
         config = function()
             require("plugins.debug.init").setup()
         end,

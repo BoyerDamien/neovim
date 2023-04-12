@@ -22,7 +22,6 @@ local themeList = {
 		config = function()
 			require("onedark").setup({
 				style = "warm",
-				transparent = true,
 				code_style = onedark_code_style,
 			})
 			require("onedark").load()
