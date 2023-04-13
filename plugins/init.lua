@@ -21,7 +21,6 @@ packer.startup(function(use)
 	--  UI
 	use({
 		require("plugins.theme").setup("onedarkWarm"),
-		-- require("plugins.feline"),
 		require("plugins.lualine"),
 		require("plugins.nvim_tree"),
 		require("plugins.indentline"),
