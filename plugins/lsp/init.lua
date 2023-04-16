@@ -7,9 +7,9 @@ local dependencies = {
 		end,
 	},
 	{
-	"williamboman/mason-lspconfig.nvim",
-	    config = require("plugins.lsp.mason-lspconfig").setup(),
-	},
+	 "williamboman/mason-lspconfig.nvim",
+	   config = require("plugins.lsp.mason-lspconfig").setup(),
+},
 	"mfussenegger/nvim-dap",
 	{
 		"jose-elias-alvarez/null-ls.nvim",

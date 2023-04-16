@@ -1,32 +1,32 @@
 local wk = require("which-key")
 
 wk.register({
-	t = {
-		name = "Nvim tree",
-		t = { "<CMD>NvimTreeToggle<CR>", "Toggle nvim tree" },
-		r = { "<CMD>NvimTreeRefresh<CR>", "Refresh nvim tree" },
-		e = { "<CMD>NvimTreeFocus<CR>", "Focus nvim tree" },
-	},
-	f = {
-		name = "Files",
-		f = { "<CMD>Telescope find_files<CR>", "Find files in workspace" },
-		w = { "<CMD>Telescope live_grep<CR>", "Find word in files" },
-		s = { "<CMD>write<CR>", "Save current file" },
-		c = { "<CMD>bd<CR>", "Close current file" },
-	},
-	g = {
-		name = "Git",
-		l = { "<CMD>LazyGit<CR>", "Open LazyGit" },
-		s = { "<CMD>Telescope git_status<CR>", "Show git status" },
-		b = { "<CMD>Telescope git_branches<CR>", "Show git branches" },
-		c = { "<CMD>Telescope git_commits<CR>", "Show git commits" },
-		d = { "<CMD>Gitsigns diffthis<CR>", "Git diff" },
-	},
-	p = {
-		name = "Packer",
-		s = { "<CMD>PackerSync<CR>", "Sync packages" },
-		c = { "<CMD>PackerCompile<CR>", "Compile packages" },
-	},
+    t = {
+        name = "Nvim tree",
+        t = { "<CMD>NvimTreeToggle<CR>", "Toggle nvim tree" },
+        r = { "<CMD>NvimTreeRefresh<CR>", "Refresh nvim tree" },
+        e = { "<CMD>NvimTreeFocus<CR>", "Focus nvim tree" },
+    },
+    f = {
+        name = "Files",
+        f = { "<CMD>Telescope find_files<CR>", "Find files in workspace" },
+        w = { "<CMD>Telescope live_grep<CR>", "Find word in files" },
+        s = { "<CMD>write<CR>", "Save current file" },
+        c = { "<CMD>bd<CR>", "Close current file" },
+    },
+    g = {
+        name = "Git",
+        l = { "<CMD>LazyGit<CR>", "Open LazyGit" },
+        s = { "<CMD>Telescope git_status<CR>", "Show git status" },
+        b = { "<CMD>Telescope git_branches<CR>", "Show git branches" },
+        c = { "<CMD>Telescope git_commits<CR>", "Show git commits" },
+        d = { "<CMD>Gitsigns diffthis<CR>", "Git diff" },
+    },
+    p = {
+        name = "Packer",
+        s = { "<CMD>PackerSync<CR>", "Sync packages" },
+        c = { "<CMD>PackerCompile<CR>", "Compile packages" },
+    },
 }, { prefix = "<Space>" })
 
 -- Buffer line navigation

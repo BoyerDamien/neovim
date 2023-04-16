@@ -35,29 +35,29 @@ vim.bo.swapfile = false
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
-vim.opt.number = true -- show line number
-vim.opt.showmatch = true -- highlight matching parenthesis
+vim.opt.number = true         -- show line number
+vim.opt.showmatch = true      -- highlight matching parenthesis
 vim.opt.foldmethod = "marker" -- enable folding (default 'foldmarker')
-vim.opt.colorcolumn = "80" -- line lenght marker at 80 columns
-vim.opt.splitright = true -- vertical split to the right
-vim.opt.splitbelow = true -- orizontal split to the bottom
-vim.opt.ignorecase = true -- ignore case letters when search
-vim.opt.smartcase = true -- ignore lowercase for the whole pattern
-vim.opt.linebreak = true -- wrap on word boundary
+vim.opt.colorcolumn = "80"    -- line lenght marker at 80 columns
+vim.opt.splitright = true     -- vertical split to the right
+vim.opt.splitbelow = true     -- orizontal split to the bottom
+vim.opt.ignorecase = true     -- ignore case letters when search
+vim.opt.smartcase = true      -- ignore lowercase for the whole pattern
+vim.opt.linebreak = true      -- wrap on word boundary
 vim.opt.undofile = true
 -----------------------------------------------------------
 -- Memory, CPU
 -----------------------------------------------------------
-vim.opt.hidden = true -- enable background buffers
-vim.opt.history = 100 -- remember n lines in history
+vim.opt.hidden = true     -- enable background buffers
+vim.opt.history = 100     -- remember n lines in history
 vim.opt.lazyredraw = true -- faster scrolling
-vim.opt.synmaxcol = 240 -- max column for syntax highlight
+vim.opt.synmaxcol = 240   -- max column for syntax highlight
 
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
-vim.opt.expandtab = true -- use spaces instead of tabs
-vim.opt.shiftwidth = 4 -- shift 4 spaces when tab
-vim.opt.tabstop = 4 -- 1 tab == 4 spaces
+vim.opt.expandtab = true   -- use spaces instead of tabs
+vim.opt.shiftwidth = 4     -- shift 4 spaces when tab
+vim.opt.tabstop = 4        -- 1 tab == 4 spaces
 vim.opt.smartindent = true -- autoindent new lines
 vim.opt.smarttab = true
