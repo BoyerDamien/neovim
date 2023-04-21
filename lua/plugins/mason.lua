@@ -29,8 +29,6 @@ return {
       "luacheck",
       "stylua",
 
-
-
       -- Markdown
       "markdownlint",
       "misspell",
@@ -51,7 +49,6 @@ return {
       "sqlfmt",
 
       -- Docker
-      "hadolint",
       "docker-compose-language-service",
       "dockerfile-language-server",
     },

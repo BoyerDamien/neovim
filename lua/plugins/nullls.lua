@@ -1,5 +1,6 @@
 return {
   "jose-elias-alvarez/null-ls.nvim",
+  dependencies = { "mason.nvim" },
   config = function()
     local null_ls = require("null-ls")
 
@@ -38,6 +39,7 @@ return {
         -- Enforce a stricter format than gofmt, while being backwards compatible.
         -- That is, gofumpt is happy with a subset of the formats that gofmt is happy with.
         null_ls.builtins.formatting.goimports,
+
 
         -- Makefile
         -- Checkmate
@@ -102,10 +104,6 @@ return {
         -- Yaml
         null_ls.builtins.formatting.yamlfmt,
 
-
-        -- Printenv
-        -- Shows the value for the current environment variable under the cursor
-        null_ls.builtins.hover.printenv,
       },
     })
   end,
