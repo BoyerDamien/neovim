@@ -3,7 +3,7 @@ return {
   run = "npm install -g swagger-ui-watcher",
   config = function()
     require("swagger-preview").setup({
-      port = 8000,
+      port = 9000,
       host = "localhost",
     })
   end
