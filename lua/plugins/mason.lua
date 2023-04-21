@@ -23,6 +23,7 @@ return {
       "impl",
       "goimports",
       "delve",
+      "go-debug-adapter",
 
       -- Lua
       "lua-language-server",
