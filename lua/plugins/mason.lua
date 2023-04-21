@@ -10,6 +10,7 @@ return {
       "pylint",
       "pyright",
       "pydocstyle",
+      "debugpy",
 
 
       -- Json
