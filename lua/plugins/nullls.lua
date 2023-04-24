@@ -5,6 +5,7 @@ return {
     local null_ls = require("null-ls")
 
     null_ls.setup({
+      debug = true,
       sources = {
 
         -- Misspell
@@ -105,6 +106,9 @@ return {
         null_ls.builtins.formatting.yamlfmt,
 
       },
+      null_ls.register(
+        require("pkg.code_actions.golang.test")
+      )
     })
   end,
 }
