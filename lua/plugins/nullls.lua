@@ -106,8 +106,9 @@ return {
         null_ls.builtins.formatting.yamlfmt,
 
       },
+      -- Regsiter custom code actions
       null_ls.register(
-        require("pkg.code_actions.golang.test")
+        require("pkg.code_actions.golang.test.init")
       )
     })
   end,
