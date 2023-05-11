@@ -108,7 +108,10 @@ return {
       },
       -- Regsiter custom code actions
       null_ls.register(
-        require("pkg.code_actions.golang.test.init")
+        {
+          require("pkg.code_actions.golang.test.init"),
+          require("pkg.code_actions.testing.init")
+        }
       )
     })
   end,

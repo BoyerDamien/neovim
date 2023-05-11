@@ -28,6 +28,9 @@ return {
           },
           args = { "-race", "-count=1", "-timeout=60s" },
         }),
+
+        -- Neotest for python
+        -- require("neotest-python")
       },
     })
   end
