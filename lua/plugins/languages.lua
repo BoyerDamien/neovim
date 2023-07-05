@@ -19,6 +19,7 @@ return {
       "yaml",
       "go",
       "rust",
+      "perl",
     })
   end,
 }

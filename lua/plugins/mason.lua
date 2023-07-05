@@ -56,7 +56,10 @@ return {
 
       -- Rust
       "rust-analyzer",
-      "rustfmt"
+      "rustfmt",
+
+      -- Perl
+      "perlnavigator"
     },
   },
 }
