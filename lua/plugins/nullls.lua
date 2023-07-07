@@ -69,7 +69,7 @@ return {
         -- Pylint is a Python static code analysis tool which looks for programming errors,
         -- helps enforcing a coding standard,
         -- sniffs for code smells and offers simple refactoring suggestions
-        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.diagnostics.flake8,
 
         -- Black
         -- The uncompromising Python code formatter

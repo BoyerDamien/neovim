@@ -7,7 +7,7 @@ return {
       -- Python
       "black",
       "isort",
-      "pylint",
+      "flake8",
       "pyright",
       "pydocstyle",
       "debugpy",

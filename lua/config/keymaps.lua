@@ -4,7 +4,7 @@
 
 -- Buffer line navigation
 vim.api.nvim_set_keymap("n", "<Tab>", "<CMD>bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", "<CMD>bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", "<CMD>bprevious<CR>", { noremap = true, silent = true })
 
 -- Split pane navigation
 vim.api.nvim_set_keymap("n", "<A-right>", "<CMD>wincmd l<CR>", { noremap = true, silent = true })
