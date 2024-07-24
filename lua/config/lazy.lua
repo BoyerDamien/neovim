@@ -21,6 +21,9 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
     { import = "lazyvim.plugins.extras.lang.helm" },
+    { import = "lazyvim.plugins.extras.lang.terraform" },
+    { import = "lazyvim.plugins.extras.lang.sql" },
+    { import = "lazyvim.plugins.extras.lang.git" },
 
     -- Linting
     { import = "lazyvim.plugins.extras.linting.eslint" },
@@ -42,6 +45,7 @@ require("lazy").setup({
 
     -- Editor
     { import = "lazyvim.plugins.extras.editor.outline" },
+    { import = "lazyvim.plugins.extras.editor.refactoring" },
 
     -- Other
     { import = "lazyvim.plugins.extras.vscode" },
