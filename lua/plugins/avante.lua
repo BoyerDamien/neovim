@@ -4,10 +4,11 @@ return {
   lazy = false,
   version = false,
   opts = {
-    provider = "ollama", -- définit le provider par défaut
+    provider = "ollama",
     providers = {
       ollama = {
-        model = "llama3",
+        endpoint = "http://127.0.0.1:11434", -- Note that there is no /v1 at the end.
+        model = "qwq:32b",
       },
     },
   },
