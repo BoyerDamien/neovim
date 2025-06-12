@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
@@ -24,6 +24,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.terraform" },
     { import = "lazyvim.plugins.extras.lang.sql" },
     { import = "lazyvim.plugins.extras.lang.git" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
 
     -- Linting
     { import = "lazyvim.plugins.extras.linting.eslint" },
@@ -34,7 +35,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.dap.nlua" },
 
     -- Formatting
-    { import = "lazyvim.plugins.extras.formatting.prettier" },
+    -- { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.formatting.black" },
 
     -- UI
@@ -50,10 +51,6 @@ require("lazy").setup({
     -- Other
     { import = "lazyvim.plugins.extras.vscode" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -81,6 +78,19 @@ require("lazy").setup({
         "tutor",
         "zipPlugin",
       },
+    },
+  },
+})
+
+require("conform").setup({
+  formatters_by_ft = {
+    templ = { "templ" },
+  },
+  formatters = {
+    templ = {
+      command = "templ",
+      args = { "fmt" },
+      stdin = true,
     },
   },
 })
